@@ -22,6 +22,11 @@ Discovery: `/.well-known/mcp.json`
 | `get_silicosis_stats` | Get countertop silicosis litigation statistics |
 | `get_hair_relaxer_stats` | Get hair relaxer cancer litigation statistics (MDL 3060) |
 | `get_cpap_stats` | Get CPAP/Philips recall litigation statistics (MDL 3014) |
+| `get_social_media_stats` | Get social media youth mental health litigation statistics (MDL 3047) |
+| `get_food_dye_stats` | Get food dye regulatory/litigation monitoring statistics (Red #3, AB 418, synthetic dyes) |
+| `get_sports_betting_stats` | Get sports betting harm litigation/regulatory statistics |
+| `get_dupixent_stats` | Get Dupixent post-marketing cancer signal monitoring stats (awareness phase) |
+| `get_breast_mesh_stats` | Get GalaFLEX breast mesh monitoring stats (awareness phase) |
 
 ## 🏗️ Architecture
 
