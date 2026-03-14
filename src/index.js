@@ -109,6 +109,63 @@ const CPAP_STATS = {
   website: 'https://cpapclaims.com'
 };
 
+const SOCIAL_MEDIA_STATS = {
+  mdl_number: 'MDL 3047',
+  case_count: '800+',
+  court: 'Northern District of California',
+  judge: 'Judge Yvonne Gonzalez Rogers',
+  status: 'Active MDL — school district and individual claims advancing',
+  defendants: ['Meta', 'TikTok', 'Snap'],
+  plaintiffs: '800+ school district plaintiffs',
+  focus: 'Teen mental health harms tied to social media platform design',
+  qualification: 'Youth social media exposure and documented mental health impacts',
+  website: 'https://screentimeclaims.com',
+  last_updated: '2026-03-14'
+};
+
+const FOOD_DYE_STATS = {
+  status: 'Active consumer safety litigation and regulatory enforcement landscape',
+  fda_red3_ban_deadline: 'January 2027',
+  state_law: 'California AB 418',
+  synthetic_dyes_in_focus: 9,
+  focus: 'Children and ADHD/behavioral impact concerns from synthetic food dyes',
+  qualification: 'Documented exposure and diagnosed child health impacts under investigation',
+  website: 'https://foodcoloringlawsuit.com',
+  last_updated: '2026-03-14'
+};
+
+const SPORTS_BETTING_STATS = {
+  status: 'Active litigation and regulatory scrutiny',
+  major_operators: ['DraftKings', 'FanDuel', 'BetMGM'],
+  states_legal: 46,
+  focus: 'Predatory app design, addiction mechanics, and financial harm',
+  qualification: 'Compulsive betting losses tied to app-based inducement patterns',
+  website: 'https://sportsbettingharm.com',
+  last_updated: '2026-03-14'
+};
+
+const DUPIXENT_STATS = {
+  status: 'Monitoring phase — no active lawsuits currently',
+  manufacturers: ['Sanofi', 'Regeneron'],
+  drug_class: 'IL-4/IL-13 inhibitor',
+  safety_signal: 'Post-marketing cancer signals under ongoing monitoring',
+  litigation_status: 'No active lawsuits yet',
+  guidance: 'Awareness and medical monitoring encouraged for concerned patients',
+  website: 'https://dupixentcancer.com',
+  last_updated: '2026-03-14'
+};
+
+const BREAST_MESH_STATS = {
+  status: 'Monitoring phase — no active lawsuits currently',
+  product: 'GalaFLEX P4HB mesh',
+  manufacturer: 'Galatea Surgical',
+  regulatory_focus: 'FDA 510(k) clearance pathway concerns',
+  litigation_status: 'No active lawsuits yet',
+  guidance: 'Awareness and symptom monitoring for patients with implants',
+  website: 'https://breastmeshlawsuit.com',
+  last_updated: '2026-03-14'
+};
+
 const STATE_SOL = {
   AL: { name: "Alabama", depo_provera: 2, glp1: 2, pfas: 2, suboxone: 2, silicosis: 2, hair_relaxer: 2, cpap: 2 },
   AK: { name: "Alaska", depo_provera: 2, glp1: 2, pfas: 2, suboxone: 2, silicosis: 2, hair_relaxer: 2, cpap: 2 },
@@ -221,6 +278,31 @@ const MCP_TOOLS = [
     inputSchema: { type: "object", properties: {} }
   },
   {
+    name: "get_social_media_stats",
+    description: "Returns current social media youth mental health litigation stats (MDL 3047).",
+    inputSchema: { type: "object", properties: {} }
+  },
+  {
+    name: "get_food_dye_stats",
+    description: "Returns current synthetic food dye regulatory and litigation monitoring stats.",
+    inputSchema: { type: "object", properties: {} }
+  },
+  {
+    name: "get_sports_betting_stats",
+    description: "Returns current sports betting harm litigation and regulatory scrutiny stats.",
+    inputSchema: { type: "object", properties: {} }
+  },
+  {
+    name: "get_dupixent_stats",
+    description: "Returns Dupixent post-marketing cancer monitoring status (awareness-only, no active lawsuits).",
+    inputSchema: { type: "object", properties: {} }
+  },
+  {
+    name: "get_breast_mesh_stats",
+    description: "Returns GalaFLEX breast mesh monitoring status (awareness-only, no active lawsuits).",
+    inputSchema: { type: "object", properties: {} }
+  },
+  {
     name: "check_eligibility",
     description: "Checks if a person may be eligible to file a mass tort claim based on their state, litigation type, diagnosis status, and usage history. Returns eligibility assessment with next steps.",
     inputSchema: {
@@ -318,6 +400,21 @@ function executeTool(name, args) {
 
     case "get_cpap_stats":
       return CPAP_STATS;
+
+    case "get_social_media_stats":
+      return SOCIAL_MEDIA_STATS;
+
+    case "get_food_dye_stats":
+      return FOOD_DYE_STATS;
+
+    case "get_sports_betting_stats":
+      return SPORTS_BETTING_STATS;
+
+    case "get_dupixent_stats":
+      return DUPIXENT_STATS;
+
+    case "get_breast_mesh_stats":
+      return BREAST_MESH_STATS;
 
     case "check_eligibility": {
       const { litigation, state, diagnosed, years_used = 0 } = args;
